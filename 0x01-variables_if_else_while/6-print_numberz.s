@@ -12,12 +12,17 @@ _main:                                  ## @main
 	.cfi_def_cfa_register %rbp
 	subq	$16, %rsp
 	movl	$0, -4(%rbp)
-	movl	$48, -8(%rbp)
+	movl	$0, -8(%rbp)
 LBB0_1:                                 ## =>This Inner Loop Header: Depth=1
-	cmpl	$57, -8(%rbp)
-	jg	LBB0_4
+	cmpl	$10, -8(%rbp)
+	jge	LBB0_4
 ## %bb.2:                               ##   in Loop: Header=BB0_1 Depth=1
-	movl	-8(%rbp), %edi
+	movl	-8(%rbp), %eax
+	movl	$10, %ecx
+	cltd
+	idivl	%ecx
+	movl	%edx, %edi
+	addl	$48, %edi
 	callq	_putchar
 ## %bb.3:                               ##   in Loop: Header=BB0_1 Depth=1
 	movl	-8(%rbp), %eax
