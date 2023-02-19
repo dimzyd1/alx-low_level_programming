@@ -15,7 +15,7 @@ _main:                                  ## @main
 	movl	$0, -8(%rbp)
 LBB0_1:                                 ## =>This Inner Loop Header: Depth=1
 	cmpl	$10, -8(%rbp)
-	jl	LBB0_4
+	jle	LBB0_4
 ## %bb.2:                               ##   in Loop: Header=BB0_1 Depth=1
 	movl	-8(%rbp), %esi
 	leaq	L_.str(%rip), %rdi
